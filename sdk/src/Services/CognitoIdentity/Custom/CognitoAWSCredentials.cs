@@ -128,12 +128,12 @@ namespace Amazon.CognitoIdentity
             /// <summary>
             /// Gets the OldIdentityId property.
             /// </summary>
-            public string OldIdentityId { get; private set; }
+            public string OldIdentityId { get;  set; }
 
             /// <summary>
             /// Gets the NewIdentityId property.
             /// </summary>
-            public string NewIdentityId { get; private set; }
+            public string NewIdentityId { get;  set; }
 
             internal IdentityChangedArgs(string oldIdentityId, string newIdentityId)
             {
@@ -150,22 +150,22 @@ namespace Amazon.CognitoIdentity
             /// <summary>
             /// Gets the Identity Id
             /// </summary>
-            public string IdentityId { get; private set; }
+            public string IdentityId { get;  set; }
 
             /// <summary>
             /// Gets the Login Provider
             /// </summary>
-            public string LoginProvider { get; private set; }
+            public string LoginProvider { get;  set; }
 
             /// <summary>
             /// Gets the Login Token
             /// </summary>
-            public string LoginToken { get; private set; }
+            public string LoginToken { get;  set; }
 
             /// <summary>
             /// Indicates if the identity Id is from cache
             /// </summary>
-            public bool FromCache { get; private set; }
+            public bool FromCache { get;  set; }
 
             /// <summary>
             /// Creates an instance of the Identity State using identity id , token, provider, fromCache flag
@@ -209,21 +209,21 @@ namespace Amazon.CognitoIdentity
         /// <summary>
         /// The AWS accountId for the account with Amazon Cognito
         /// </summary>
-        public string AccountId { get; private set; }
+        public string AccountId { get;  set; }
         /// <summary>
         /// The Amazon Cogntio identity pool to use
         /// </summary>
-        public string IdentityPoolId { get; private set; }
+        public string IdentityPoolId { get;  set; }
 
         /// <summary>
         /// The ARN of the IAM Role that will be assumed when unauthenticated
         /// </summary>
-        public string UnAuthRoleArn { get; private set; }
+        public string UnAuthRoleArn { get;  set; }
 
         /// <summary>
         /// The ARN of the IAM Role that will be assumed when authenticated
         /// </summary>
-        public string AuthRoleArn { get; private set; }
+        public string AuthRoleArn { get;  set; }
 
         /// <summary>
         /// Logins map used to authenticated with Amazon Cognito.
@@ -255,6 +255,7 @@ namespace Amazon.CognitoIdentity
         public string[] CurrentLoginProviders
         {
             get { return this.Logins.Keys.ToArray(); }
+            set { this.this.Logins.Keys = value; }
         }
 
         /// <summary>
@@ -297,6 +298,11 @@ namespace Amazon.CognitoIdentity
             get
             {
                 return Logins.Count;
+            }
+            
+            set
+            {
+            Logins.Count value;
             }
         }
 
